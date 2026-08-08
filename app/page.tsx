@@ -69,28 +69,28 @@ const research = [
 
 const skillGroups = [
   {
-    title: "AI / ML",
-    skills: ["Machine Learning", "Deep Learning", "TensorFlow", "NLP", "Computer Vision", "RAG Systems"],
+    title: "Languages",
+    skills: ["Python", "C++", "C#", "SQL"],
   },
   {
-    title: "Programming",
-    skills: ["Python", "C++", "C#", "SQL", "DBMS", "Data Structures"],
+    title: "AI/ML",
+    skills: ["LLMs", "Transformers", "NLP", "Computer Vision", "Deep Learning"],
   },
   {
-    title: "Cloud & Analytics",
-    skills: ["Azure", "Power BI", "Streamlit", "Ollama", "Azure SQL", "Azure Function App"],
+    title: "Frameworks",
+    skills: ["Langchain", "LangGraph", "LlamaIndex", "FastAPI", "PyTorch", "TensorFlow", "Hugging Face", "Streamlit"],
   },
   {
-    title: "Finance",
-    skills: ["Financial Modeling", "QuantLib", "Black-Scholes", "Risk Analysis", "Time-Series Forecasting"],
+    title: "Tools",
+    skills: ["Git", "Docker", "Kubernetes", "Azure", "MLflow"],
   },
 ];
 
 const navItems = [
   ["About", "about"],
   ["Experience", "experience"],
-  ["Selected Work", "projects"],
-  ["Toolkit", "toolkit"],
+  ["Projects", "projects"],
+  ["Skills", "toolkit"],
   ["Research", "research"],
   ["Contact", "contact"],
 ] as const;
@@ -165,17 +165,18 @@ export default function Home() {
 
           <div className="about-copy reveal">
             <p className="large-copy">
-              I am a Computer Science graduate focused on machine learning, data, and production-minded software.
+              I develop AI systems focused on building reliable and production-ready systems.
             </p>
             <p className="muted">
-              B.Tech in Computer Science &amp; Business Systems graduate from Mukesh Patel School of Technology.
-              My work blends practical software delivery with analytical depth in machine learning and equity markets.
+              B.Tech in Computer Science &amp; Business Systems from Mukesh Patel School of Technology, CGPA: 3.58/4.
+              I like working on RAG based solutions and AI systems with a focus on building practical AI applications using Agentic AI and Cloud technologies.
             </p>
 
             <div className="about-tags" aria-label="Focus areas">
               <span>Agentic AI</span>
               <span>Generative AI</span>
               <span>RAG Systems</span>
+              <span>LLMs</span>
               <span>Machine Learning</span>
               <span>Deep Learning</span>              
             </div>
