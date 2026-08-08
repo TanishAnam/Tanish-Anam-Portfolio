@@ -135,14 +135,7 @@ export default function Home() {
       </header>
 
       <section id="about" className="section about">
-        <div className="section-intro reveal">
-          <p className="section-label">(01) ABOUT</p>
-          <h1>AI/ML Engineer</h1>
-          <p className="lead">
-            I build practical machine learning systems and polished software with an emphasis on clarity,
-            reliability, and real-world use.
-          </p>
-        </div>
+        <p className="section-label reveal">(01) ABOUT</p>
 
         <div className="about-layout">
           <div className="portrait-wrap reveal">

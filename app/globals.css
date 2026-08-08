@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&display=swap');
 
 :root {
-  --ink:#191613;
-  --paper:#f5f1e9;
-  --surface:#efe8dc;
-  --surface-strong:#e7ddcf;
-  --accent:#7f6244;
-  --muted:#736a60;
-  --muted-2:#8e857a;
-  --line:rgba(25,22,19,.10);
-  --line-strong:rgba(25,22,19,.16);
-  --shadow:0 18px 45px rgba(25,22,19,.08);
+  --ink:#1a1714;
+  --paper:#f4efe7;
+  --surface:#ede5d7;
+  --surface-strong:#e3d7c7;
+  --accent:#75573d;
+  --muted:#5f574f;
+  --muted-2:#7d7267;
+  --line:rgba(26,23,20,.11);
+  --line-strong:rgba(26,23,20,.15);
+  --shadow:0 16px 36px rgba(26,23,20,.07);
 }
 
 * { box-sizing:border-box; }
@@ -22,8 +22,8 @@ html {
 body {
   margin:0;
   background:
-    radial-gradient(circle at top right, rgba(127,98,68,.05), transparent 26%),
-    linear-gradient(180deg, #f7f3ec 0%, #f2ece2 100%);
+    radial-gradient(circle at top right, rgba(117,87,61,.045), transparent 24%),
+    linear-gradient(180deg, #f6f1e8 0%, #f0e9dd 100%);
   color:var(--ink);
   font-family:Inter,Arial,sans-serif;
   overflow-x:hidden;
@@ -43,9 +43,9 @@ img { display:block; }
   align-items:center;
   gap:28px;
   padding:18px 4vw;
-  background:rgba(247,243,236,.86);
+  background:rgba(246,241,233,.9);
   backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(25,22,19,.08);
+  border-bottom:1px solid rgba(26,23,20,.08);
 }
 .logo {
   font-size:22px;
@@ -91,7 +91,7 @@ footer a:hover { color:var(--accent); }
 .menu-button { display:none; background:none; border:0; cursor:pointer; font-family:'Source Code Pro',monospace; letter-spacing:.09em; text-transform:uppercase; }
 
 .section {
-  padding:96px 4vw;
+  padding:76px 4vw;
   scroll-margin-top:105px;
 }
 .section-label {
@@ -100,10 +100,6 @@ footer a:hover { color:var(--accent); }
   letter-spacing:.11em;
   text-transform:uppercase;
   color:var(--accent);
-}
-.section-intro {
-  max-width:860px;
-  margin-bottom:38px;
 }
 h1, h2, h3 {
   margin:0;
@@ -114,16 +110,8 @@ h1 {
   line-height:.95;
   font-weight:700;
 }
-.lead {
-  max-width:760px;
-  margin:16px 0 0;
-  font-size:clamp(16px,1.35vw,20px);
-  line-height:1.8;
-  color:var(--muted);
-}
-
 .about {
-  padding-top:56px;
+  padding-top:44px;
 }
 .about-layout {
   display:grid;
@@ -143,12 +131,12 @@ h1 {
 .portrait-wrap img {
   object-fit:cover;
   object-position:52% 18%;
-  filter:grayscale(100%) contrast(1.02);
+  filter:saturate(1.06) contrast(1.02);
   transition:transform .55s ease, filter .35s ease;
 }
 .portrait-wrap:hover img {
-  filter:grayscale(0%);
-  transform:scale(1.025);
+  filter:saturate(1.08) contrast(1.03);
+  transform:scale(1.02);
 }
 .about-copy {
   display:flex;
@@ -205,7 +193,7 @@ h1 {
 
 .experience,
 .research {
-  background:rgba(255,255,255,.22);
+  background:rgba(255,255,255,.14);
 }
 .experience-grid,
 .research-list {
@@ -249,7 +237,7 @@ h1 {
 }
 
 .projects {
-  background:linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.22) 100%);
+  background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.16) 100%);
 }
 .project-list {
   max-width:1180px;
@@ -270,7 +258,7 @@ h1 {
 }
 .project:hover,
 .project.active {
-  background:rgba(255,255,255,.24);
+  background:rgba(255,255,255,.18);
   padding-left:14px;
   transform:translateY(-1px);
 }
@@ -334,7 +322,7 @@ h1 {
 }
 
 .toolkit {
-  background:rgba(255,255,255,.26);
+  background:rgba(255,255,255,.16);
 }
 .skill-cloud span {
   font-size:clamp(14px,1.3vw,18px);
@@ -342,7 +330,7 @@ h1 {
 }
 
 .contact {
-  background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.18) 100%);
+  background:linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.14) 100%);
 }
 .contact-body {
   max-width:920px;
@@ -374,7 +362,7 @@ h1 {
   padding-bottom:4px;
 }
 footer {
-  margin-top:48px;
+  margin-top:34px;
   padding-top:18px;
   border-top:1px solid var(--line);
   display:flex;
@@ -444,17 +432,8 @@ footer {
     gap:2px;
   }
   .section {
-    padding:72px 5vw;
+    padding:62px 5vw;
     scroll-margin-top:88px;
-  }
-  .section-intro {
-    margin-bottom:28px;
-  }
-  h1 {
-    font-size:clamp(34px,11vw,52px);
-  }
-  .lead {
-    font-size:15px;
   }
   .about-layout {
     grid-template-columns:1fr;
