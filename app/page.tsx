@@ -10,8 +10,8 @@ const projects = [
     type: "Computer Vision",
     description:
       "Two-stage detection and blurring pipeline using YOLOv5 and CSPResNeXt-50. Built to identify unauthorised logos in real-world media.",
-    metric: "0.81 mAP50",
-    tags: ["YOLOv5", "OpenCV", "Deep Learning"],
+    metric: "",
+    tags: ["YOLOv5", "CSPResNeXt-50", "Computer Vision", "Object Detection"],
   },
   {
     number: "02",
@@ -19,8 +19,8 @@ const projects = [
     type: "Quantitative Research",
     description:
       "Time-series forecasting system combining Prophet trend modeling with GARCH volatility analysis and MAPE validation.",
-    metric: "Prophet + GARCH",
-    tags: ["Python", "Yfinance", "Statistics"],
+    metric: "",
+    tags: ["Prophet", "GARCH", "Time-Series Forecasting"],
   },
   {
     number: "03",
@@ -28,27 +28,32 @@ const projects = [
     type: "Cloud Application",
     description:
       "Cloud-hosted automotive workflow system with dual inventory operations, secure image handling and Azure SQL persistence.",
-    metric: ".NET 8 + Azure",
-    tags: ["Razor Pages", "EF Core", "Azure"],
-  },
-  {
-    number: "04",
-    title: "Choose The Right Option",
-    type: "Financial Modeling",
-    description:
-      "Excel-based derivatives pricing analysis for Asian Paints and ICICI Bank, calculating Greeks and volatility-led directional insights.",
-    metric: "5 Option Greeks",
-    tags: ["Black-Scholes", "Excel", "Risk Analysis"],
+    metric: "",
+    tags: [" .NET 8.0", "Azure SQL", "Azure Function App"],
   },
 ];
 
 const experience = [
   {
+    period: "JUL 2025 - PRESENT",
+    title: "Capgemini Technology Services",
+    role: "Software Engineer",
+    description: [
+      "Developed an AI powered Sentiment Analysis Platform for transport related social media monitoring.",
+      "Built NLP pipelines for sentiment analysis, entity extraction and incident detection using VADER.",
+      "Integrated Streamlit, Power BI and Ollama for analytics and AI insights.",
+    ],
+  },
+  {
     period: "MAY - JUL 2024",
     title: "Mondelez International",
-    role: "Digital Workplace Print Services Intern",
-    description:
-      "Coordinated printer refresh initiatives across Australia, Bahrain and Nigeria; analysed weekly incidents in Power BI and resolved SMTP scanning issues across 25 Indian sites.",
+    role: "Technical Intern",
+    description: [
+      "Managed project schedules and reports for printer refresh projects across Australia, Bahrain and Nigeria.",
+      "Prepared and analysed weekly incident reports using Power BI.",
+      "Coordinated with network teams for IP address allocations and printer installations.",
+      "Configured SMTP settings to resolve scanning issues at 25 Alliant sites in India.",
+    ],
   },
 ];
 
@@ -62,19 +67,23 @@ const research = [
   },
 ];
 
-const skills = [
-  "Python",
-  "C++",
-  "SQL",
-  "C#",
-  "Machine Learning",
-  "Deep Learning",
-  "TensorFlow",
-  "QuantLib",
-  "Power BI",
-  "Azure",
-  "DBMS",
-  "Financial Modeling",
+const skillGroups = [
+  {
+    title: "AI / ML",
+    skills: ["Machine Learning", "Deep Learning", "TensorFlow", "NLP", "Computer Vision", "RAG Systems"],
+  },
+  {
+    title: "Programming",
+    skills: ["Python", "C++", "C#", "SQL", "DBMS", "Data Structures"],
+  },
+  {
+    title: "Cloud & Analytics",
+    skills: ["Azure", "Power BI", "Streamlit", "Ollama", "Azure SQL", "Azure Function App"],
+  },
+  {
+    title: "Finance",
+    skills: ["Financial Modeling", "QuantLib", "Black-Scholes", "Risk Analysis", "Time-Series Forecasting"],
+  },
 ];
 
 const navItems = [
@@ -164,9 +173,11 @@ export default function Home() {
             </p>
 
             <div className="about-tags" aria-label="Focus areas">
+              <span>Agentic AI</span>
+              <span>Generative AI</span>
+              <span>RAG Systems</span>
               <span>Machine Learning</span>
-              <span>Software Systems</span>
-              <span>Quant Finance</span>
+              <span>Deep Learning</span>              
             </div>
 
             <div className="about-links">
@@ -192,7 +203,11 @@ export default function Home() {
               <p className="year">{item.period}</p>
               <h3>{item.title}</h3>
               <p className="role">{item.role}</p>
-              <p>{item.description}</p>
+              <ul className="bullet-list">
+                {item.description.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -232,9 +247,16 @@ export default function Home() {
 
       <section id="toolkit" className="section toolkit">
         <p className="section-label reveal">(04) SKILLS</p>
-        <div className="skill-cloud reveal">
-          {skills.map((skill) => (
-            <span key={skill}>{skill}</span>
+        <div className="skill-groups reveal">
+          {skillGroups.map((group) => (
+            <article key={group.title} className="skill-group">
+              <p className="skill-group-title">{group.title}</p>
+              <div className="skill-cloud">
+                {group.skills.map((skill) => (
+                  <span key={skill}>{skill}</span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </section>

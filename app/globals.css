@@ -94,13 +94,14 @@ footer a:hover { color:var(--accent); }
   gap:4px;
   text-align:right;
   font-family:'Source Code Pro',monospace;
-  font-size:10px;
+  font-size:12px;
+  font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--muted-2);
+  color:var(--ink);
 }
 .nav-social {
-  color:var(--accent-soft);
+  color:var(--accent);
 }
 .nav-social a:first-child {
   margin-top:1px;
@@ -252,6 +253,16 @@ h1 {
   line-height:1.85;
   color:var(--muted);
 }
+.bullet-list {
+  max-width:720px;
+  margin:18px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.85;
+}
+.bullet-list li + li {
+  margin-top:8px;
+}
 
 .projects {
   background:
@@ -344,6 +355,28 @@ h1 {
   background:
     radial-gradient(circle at 80% 18%, rgba(151,160,122,.08), transparent 22%),
     linear-gradient(180deg, rgba(151,160,122,.06) 0%, rgba(192,199,161,.05) 100%);
+}
+.skill-groups {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  max-width:1180px;
+}
+.skill-group {
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(255,255,255,.20);
+  box-shadow:var(--shadow);
+}
+.skill-group-title {
+  margin:0 0 14px;
+  font-family:'Source Code Pro',monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--accent);
 }
 .skill-cloud span {
   font-size:clamp(14px,1.3vw,18px);
@@ -485,6 +518,12 @@ footer {
   }
   .large-copy {
     font-size:clamp(22px,7vw,30px);
+  }
+  .skill-groups {
+    grid-template-columns:1fr;
+  }
+  .skill-group {
+    padding:18px;
   }
   .project {
     grid-template-columns:1fr 22px;
