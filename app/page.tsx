@@ -88,7 +88,7 @@ const navItems = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState<number | null>(0);
+  const [activeProject, setActiveProject] = useState<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -128,9 +128,15 @@ export default function Home() {
           ))}
         </nav>
 
-        <div className="nav-contact" aria-label="Contact details">
-          <a href="mailto:tanuanam@gmail.com">tanuanam@gmail.com</a>
-          <a href="tel:+919819049575">+91 98190 49575</a>
+        <div className="nav-meta" aria-label="Contact and social links">
+          <div className="nav-contact">
+            <a href="mailto:tanuanam@gmail.com">tanuanam@gmail.com</a>
+            <a href="tel:+919819049575">+91 98190 49575</a>
+          </div>
+          <div className="nav-social">
+            <a href="https://in.linkedin.com/in/tanish-anam-348278236" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/TanishAnam" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
         </div>
       </header>
 
@@ -193,7 +199,7 @@ export default function Home() {
       </section>
 
       <section id="projects" className="section projects">
-        <p className="section-label reveal">(03) SELECTED WORK</p>
+        <p className="section-label reveal">(03) PROJECTS</p>
         <div className="project-list reveal">
           {projects.map((project, index) => {
             const open = activeProject === index;
@@ -225,7 +231,7 @@ export default function Home() {
       </section>
 
       <section id="toolkit" className="section toolkit">
-        <p className="section-label reveal">(04) TOOLKIT</p>
+        <p className="section-label reveal">(04) SKILLS</p>
         <div className="skill-cloud reveal">
           {skills.map((skill) => (
             <span key={skill}>{skill}</span>
